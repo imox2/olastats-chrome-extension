@@ -1,0 +1,33 @@
+startStatistics
+
+bookingId: "CRN2474317040"
+bookingTime: "Wed, Nov 14, 11:55 PM"
+bookingTimestamp: 1542219830
+categoryId: "bike"
+disabled: false
+displayName: "Bike"
+driverPhoto: "http://s3-ap-southeast-1.amazonaws.com/ola-ims-drivers/production/drivers/57720320/thumb_1532000216723.jpeg"
+dropAddress: "Ram Nagar Metro Station, Hawa Sadak Road Ramnagar Extension Sodala Jaipur Rajasthan India"
+pickupAddress: "102, 14, Sector 10, Sector 6, Pratap Nagar, Jaipur"
+status: "CANCELLED"
+totalFare: null
+__proto__: Object
+
+city: "jaipur"
+countryCode: "IN"
+couponApplied: false
+datetimeText: "Sun, Dec 09, 01:25 AM"
+dropAddress: "102, 14, Sector 10, Sector 6, Pratap Nagar, Jaipur"
+dropTime: "01:32 AM"
+freeUpgrageTxt: ""
+isCorpRide: false
+isReasonEditable: false
+pickupAddress: "163/223, Sector 16, Pratap Nagar, Jaipur, Rajasthan 302033, India"
+pickupTime: "01:27 AM"
+pickupTimestamp: 1544313612000
+routeImage: "http://maps.googleapis.com/maps/api/staticmap?size=640x320&maptype=roadmap&markers=icon%3Ahttp%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Folacabsimages%2Finvoice%2FStart2x.png%7C26.8060746154%2C75.8262433112&markers=icon%3Ahttp%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Folacabsimages%2Finvoice%2FEnd2x.png%7C26.7991049%2C75.8199181&path=weight%3A5%7Ccolor%3A0x4379ai9%7C&client=gme-anitechnologiespvt&channel=mirage&signature=5A9sB40CB9SJryZDsOV68UE50mU%3D"
+share_express_attributes: {}
+status: "COMPLETED"
+statusText: "Completed"
+subStatus: "completed"
+userSubmittedRating: 5
