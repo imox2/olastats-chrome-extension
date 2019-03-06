@@ -20,6 +20,12 @@ function activate_click_handler() {
     event.stopImmediatePropagation();
     //(... rest of your JS code)
   });
+
+  $(".open_link").on('click', function(event){
+    console.log("open_link called");
+     chrome.tabs.create({url: "https://nosemantic.com", active: false});
+      return false;
+  });
 }
 
 function remove_modal() {
