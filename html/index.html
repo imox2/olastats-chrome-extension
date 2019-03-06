@@ -5,8 +5,10 @@
     Ola Stats
   </title>
   <link href="../assets/img/brand/ola_stat.png" rel="icon" type="image/png">
+  <link rel="stylesheet" type="text/css" href="../assets/css/jssocials.css" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/jssocials-theme-flat.css" />
 <script src="../js/libs/jquery.js"></script>
-
+  <script src="../assets/js/jssocials.min.js"></script>
 <script src="../assets/js/moment.js"></script>
   <script src="../assets/js/main.js"></script>
 
@@ -32,7 +34,7 @@
       <a class="navbar-brand pt-0" href="javascript:void(0);">
         <img src="../assets/img/brand/ola_stat.png" class="navbar-brand-img" alt="...">
       </a>
-      
+
       <!-- Collapse -->
       <div class="collapse navbar-collapse" id="sidenav-collapse-main">
         <!-- Collapse header -->
@@ -99,7 +101,7 @@
         <!-- Divider -->
       <hr class="my-3">
       <!-- Heading -->
-      <h6 class="navbar-heading text-muted">Share On</h6>
+      <h6 class="navbar-heading text-muted" >Share On</h6>
       <!-- Navigation -->
       <!-- <ul class="navbar-nav mb-md-3">
         <li class="nav-item">
@@ -120,11 +122,16 @@
       </ul> -->
       <ul class="navbar-nav mb-md-3">
           <li class="nav-item">
-            <a class="nav-link" href="fb.com">
+
+           <!--  <a class="nav-link" href="fb.com">
               <i class="fab fa-twitter text-blue"></i> <i class="fab fa-facebook text-blue"></i>
-            </a>
+            </a> -->
+
+            
           </li>
       </ul>
+
+      <div id="sharebuttons"></div>
 
       <hr class="my-3">
       <!-- Heading -->
@@ -133,7 +140,7 @@
 
 
 
-        
+
       </div>
     </div>
   </nav>
@@ -157,34 +164,34 @@
       <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
     <div style="font-size: 51px;" class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
         <div class="modal-content bg-gradient-danger">
-          
+
             <div class="modal-header">
                 <h6 class="modal-title" id="modal-title-notification">OLA MONEY REPORT CARD</h6>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true" class="remove_modal">X</span>
                 </button>
             </div>
-            
+
             <div class="modal-body">
-              
+
                 <div class="py-3 text-center">
                     <i class="fas fa-coins"></i>
                     <h4 class="heading mt-4">Ola!</h4>
                     <h3 class="heading mt-4">You have spent a total of <i class="fas fa-rupee-sign"></i> <span id="all_stat_total_fare_modal"></span> On Ola Till Today </h3>
                 </div>
-                
+
             </div>
-            
+
             <div class="modal-footer">
                 <!-- <button type="button" class="btn btn-white">Ok, Got it</button> -->
-                <button type="button" class="btn btn-link text-white ml-auto remove_modal" data-dismiss="modal">Close</button> 
+                <button type="button" class="btn btn-link text-white ml-auto remove_modal" data-dismiss="modal">Close</button>
             </div>
-            
+
         </div>
     </div>
 </div>
 </div>
- 
+
 </div>
 
         <div class="header-body pad-us">
@@ -265,7 +272,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="col-xl-4 col-lg-6">
               <div class="card card-stats mb-4 mb-xl-0">
                 <div class="card-body">
@@ -475,7 +482,7 @@
           </div>
         </div>
 
-        
+
 
         <div class="header-body pad-us">
           <!-- Card stats -->
@@ -541,23 +548,24 @@
 
     </div>
     <!-- Page content -->
-    
+
   </div>
 
-  
+
   <!-- Argon Scripts -->
 
   <!-- Core -->
-  
-  
+<script src="../assets/js/share.js"></script>
+
 
   <!-- Optional JS -->
+
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/vendor/chart.js/dist/Chart.min.js"></script>
   <script src="../assets/vendor/chart.js/dist/Chart.extension.js"></script>
   <!-- Argon JS -->
 
-  
+
 
 
 </body>
