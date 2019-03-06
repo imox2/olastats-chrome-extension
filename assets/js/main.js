@@ -6,26 +6,23 @@ $(_ => {
     global.trip_data = response.data['global_detailed_data'];
     global.trip_data_summary = response.data['global_data'];
     transform_single_object_to_multiple_specific_flat_objects();
-    $("#modal-notification").show();
-    $("#modal-notification").collapse('toggle');
+    //$("#modal-notification").show();
+    //$("#modal-notification").collapse('toggle');
     //registerClickHandlers();
     activate_click_handler();
   });
 });
 
 function activate_click_handler() {
+  
+
+  //$("#modal-notification").show();
+  //  $("#modal-notification").collapse('toggle');
   $(".remove_modal").on('click', function(event){
-    $("#modal-notification").collapse('toggle');
-    event.stopPropagation();
-    event.stopImmediatePropagation();
+    $("#modal-notification").hide();
     //(... rest of your JS code)
   });
 
-  $(".open_link").on('click', function(event){
-    console.log("open_link called");
-     chrome.tabs.create({url: "https://nosemantic.com", active: false});
-      return false;
-  });
 }
 
 function remove_modal() {
