@@ -6,9 +6,25 @@ $(_ => {
     global.trip_data = response.data['global_detailed_data'];
     global.trip_data_summary = response.data['global_data'];
     transform_single_object_to_multiple_specific_flat_objects();
+    $("#modal-notification").show();
+    $("#modal-notification").collapse('toggle');
     //registerClickHandlers();
+    activate_click_handler();
   });
 });
+
+function activate_click_handler() {
+  $(".remove_modal").on('click', function(event){
+    $("#modal-notification").collapse('toggle');
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    //(... rest of your JS code)
+  });
+}
+
+function remove_modal() {
+  
+}
 
 function get_trip_time_as_minutes(star_time,end_time) {
 
@@ -72,7 +88,8 @@ function show_all_stats(trip_type_obj,total_fare,pick_up_address_obj,drop_addres
   $("#all_stat_total_canceled_rides").text(canceled_trip);
   $("#all_stat_total_completed_rides").text(completed_trip);
 
-  $("#all_stat_total_fare").text("Rs "+total_fare);
+  $("#all_stat_total_fare").text(total_fare); 
+  $("#all_stat_total_fare_modal").text(total_fare); 
   $("#all_stat_total_drop_location").text(Object.keys(drop_address_obj).length);
   $("#all_stat_total_pick_up_location").text(Object.keys(pick_up_address_obj).length);
 
@@ -161,7 +178,7 @@ function show_all_stats(trip_type_obj,total_fare,pick_up_address_obj,drop_addres
   //total_time
     $("#all_stat_total_time").text(total_time+" minutes");
 
-most_expensive_trip_value
+
 
     //highest completed ride of month
     if(Object.keys(completed_ride_by_year_obj).length>0) {
@@ -193,7 +210,7 @@ most_expensive_trip_value
       $("#all_stat_busiest_month").text("No Busy Month Yet");
     }
 
-    $("#all_stat_expensive").text("Rs "+most_expensive_trip_value);
+    $("#all_stat_expensive").text(most_expensive_trip_value);
 
 }
 
@@ -233,7 +250,7 @@ function transform_single_object_to_multiple_specific_flat_objects() {
 
     if(data['status']=="COMPLETED") {
     let fare = 0.0;
-    fare = (typeof data['totalFare']!="undefined")?data['totalFare']:0.0;
+    fare = (typeof data['totalFare']!="undefined" && data['totalFare'])?data['totalFare']:0.0;
     console.log("fare:",fare);
       if(fare!=0.0) {
         fare = fare.match(/\d+/)[0] // rs 67 to 67
