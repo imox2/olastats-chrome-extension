@@ -1,6 +1,6 @@
 var choice = async () => {
   const {value} = await Swal.fire({
-    title: 'You are not on ola cabs site. Please select an option then click the icon again.',
+    title: 'You are not on ola cabs site. Please select the single option then click the [O] icon again.',
     input: 'radio',
     inputOptions: {
       ola: "Ola Cabs"

@@ -23,6 +23,15 @@ function activate_click_handler() {
     //(... rest of your JS code)
   });
 
+  $("#share").click(e => {
+    let completed = $("#all_stat_total_completed_rides").text();
+    let money = $("#all_stat_total_fare_modal").text();
+    let text = `I've taken ${completed} Ola Rides, and have spent Rs ${money} on Ola Rides! Check out your numbers using Ola Trip Stats on Chrome store `;
+    window.open("https://twitter.com/share?url=https://chrome.google.com/webstore/detail/ola-trip-stats/aonoimokllfbaojdcaokdodpmpbgfhhk&text=" + encodeURIComponent(text), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+    // window.open("https://twitter.com/share?url=https://chrome.google.com/webstore&text=" + encodeURIComponent(text), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+    return false;
+  });
+
 }
 
 function remove_modal() {

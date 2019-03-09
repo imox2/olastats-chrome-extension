@@ -4,7 +4,7 @@
   <title>
     Ola Stats
   </title>
-  <link href="../assets/img/brand/ola_stat.png" rel="icon" type="image/png">
+  <link href="../images/ola_stats_browser_icon.png" rel="icon" type="image/png">
 <script src="../js/libs/jquery.js"></script>
 
 <script src="../assets/js/moment.js"></script>
@@ -30,7 +30,9 @@
       </button>
       <!-- Brand -->
       <a class="navbar-brand pt-0" href="javascript:void(0);">
-        <img src="../assets/img/brand/ola_stat.png" class="navbar-brand-img" alt="...">
+        <img src="../images/ola_large.png" class="navbar-brand-img" alt="...">
+        <br>
+        <h6 class="navbar-heading text-green text-center text-muted">Version 1.3</h6>
       </a>
       
       <!-- Collapse -->
@@ -40,8 +42,10 @@
           <div class="row">
             <div class="col-6 collapse-brand">
               <a href="javascript:void(0);">
-                <img src="../assets/img/brand/ola_stat.png">
+                <img src="../images/ola_large.png">
               </a>
+              <br>
+              <h6 class="navbar-heading text-green text-center text-muted">Version 1.2</h6>
             </div>
             <div class="col-6 collapse-close">
               <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
@@ -120,8 +124,8 @@
       </ul> -->
       <ul class="navbar-nav mb-md-3">
           <li class="nav-item">
-            <a class="nav-link" href="https://fb.com">
-              <i class="fab fa-twitter text-blue"></i> <i class="fab fa-facebook text-blue"></i>
+            <a class="nav-link" href="javascript:void();">
+              <i id="share" class="fab fa-twitter text-blue"></i>
             </a>
           </li>
       </ul>
@@ -569,6 +573,12 @@
           </div>
         </div>
 
+        <hr class="text-white my-3">
+          <h4 class="text-white navbar-heading text-muted">Notes about data</h4>
+        <ul>
+          <li class="text-white"> Calculations like Frequent Drop Locations, Busiest Month are based on completed rides only (ignoring cancelled rides) </li>
+          <li class="text-white"> Busiest Month contain data from months spread over several years (May 2016 and May 2018's data is clubbed together in May) </li>
+        <li class="text-white"> Total distance, minutes, money spent may be only 95% correct (Ola in some rides do not return those data) </li></ul>
 
       </div>
 

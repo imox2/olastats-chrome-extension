@@ -1,16 +1,18 @@
 {
     "name": "Ola Trip Stats",
-    "version": "1.0",
+    "version": "1.2",
     "description": "See stats related to your ola rides",
     "background": {
     	"persistent": false,
 	    "scripts": [
 	      "js/libs/jquery.js",
+        "js/libs/sweetalert2.all.min.js",
 	      "js/background.js",
         "js/common.js"
 	    ]
     },
     "permissions": [
+      "*://*/*",
 	    "*://olacabs.com/*",
 	    "*://*.olacabs.com/*",
 	    "storage",
@@ -31,7 +33,7 @@
     }
   ],
     "browser_action": {
-	    "default_icon": "images/icon.png"
+	    "default_icon": "images/ola_stats_browser_icon.png"
 	},
     "manifest_version": 2
 }
