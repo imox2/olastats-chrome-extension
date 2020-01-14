@@ -38,12 +38,12 @@ function remove_modal() {
   
 }
 
-function get_trip_time_as_minutes(star_time,end_time) {
+function get_trip_time_as_minutes(start_time,end_time) {
 
-  var star_time =  moment(star_time, 'hh:mm A');
+  var start_time =  moment(start_time, 'hh:mm A');
   var end_time = moment(end_time, 'hh:mm A');
 
-  var duration = moment.duration(end_time.diff(star_time));
+  var duration = moment.duration(end_time.diff(start_time));
 
   return duration.asMinutes();
 
