@@ -1,0 +1,27 @@
+{
+  "name": "olastats-chrome-extension",
+  "version": "1.0.0",
+  "description": "Chrome extension to tell your ola account statistics (like money spent)",
+  "main": "ola_stats.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imox2/olastats-chrome-extension.git"
+  },
+  "keywords": [
+    "chrome-extension"
+  ],
+  "author": "imox",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imox2/olastats-chrome-extension/issues"
+  },
+  "homepage": "https://github.com/imox2/olastats-chrome-extension#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0"
+  }
+}
