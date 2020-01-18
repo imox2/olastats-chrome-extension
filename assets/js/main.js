@@ -38,15 +38,35 @@ function remove_modal() {
   
 }
 
-function get_trip_time_as_minutes(start_time,end_time) {
+function get_trip_time_as_minutes(start_time,end_time,data) {
+  // convert as minutes, default to send 0
+  let minutes = 0;
 
-  var start_time =  moment(start_time, 'hh:mm A');
-  var end_time = moment(end_time, 'hh:mm A');
+  if(start_time && end_time) {
+    // parse time using 24-hour clock and use UTC to prevent DST issues
+    var start = moment.utc(start_time, "HH:mm");
+    var end = moment.utc(end_time, "HH:mm");
 
-  var duration = moment.duration(end_time.diff(start_time));
+    // account for crossing over to midnight the next day
+    // corrected day over time bug
+    // if start time is 11:34 pm and drop time is 12:34 am (midnight)
+    // earlier it would show - 1380 instead of +60 of journey time
+    // because drop time becomes greater
+    if (end.isBefore(start)) {
+      end.add(1, 'day');
+    }
 
-  return duration.asMinutes();
+    // calculate the duration
+    var duration = moment.duration(end.diff(start));
+    minutes = duration.asMinutes();
+  }
+  else {
+    // has no pickupTime field but has pickupTimestamp
+    // or pickupTime = ""; // empty string
+    minutes = 0;
+  }
 
+  return minutes;
 }
 
 function drawChart() {
@@ -376,7 +396,7 @@ function transform_single_object_to_multiple_specific_flat_objects() {
         
 
         if(typeof data['rideDetails']['pickupTime']!="undefined" && typeof data['rideDetails']['dropTime']!="undefined") {
-          total_time = total_time + get_trip_time_as_minutes(data['rideDetails']['pickupTime'],data['rideDetails']['dropTime'])
+          total_time = total_time + get_trip_time_as_minutes(data['rideDetails']['pickupTime'],data['rideDetails']['dropTime'],data)
         }
 
         
