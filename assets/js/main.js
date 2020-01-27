@@ -2,7 +2,6 @@ let global = {};
 
 $(_ => {
   chrome.runtime.sendMessage({requestData: true}, function (response) {
-    console.log("main js:",response);
     global.trip_data = response.data['global_detailed_data'];
     global.trip_data_summary = response.data['global_data'];
     transform_single_object_to_multiple_specific_flat_objects();
@@ -283,7 +282,6 @@ function transform_single_object_to_multiple_specific_flat_objects() {
     if(data['status']=="COMPLETED") {
     let fare = 0.0;
     fare = (typeof data['totalFare']!="undefined" && data['totalFare'])?data['totalFare']:0.0;
-    console.log("fare:",fare);
       if(fare!=0.0) {
         fare = fare.match(/\d+/)[0] // rs 67 to 67
         fare = parseFloat(fare);
@@ -501,31 +499,8 @@ function transform_single_object_to_multiple_specific_flat_objects() {
     }
 
 
-  console.log("trip_type_obj:",trip_type_obj);
-    console.log("pick_up_address_obj:",pick_up_address_obj);
-    console.log("drop_address_obj:",drop_address_obj);
-    console.log("car_ride_type_obj:",car_ride_type_obj);
-    console.log("car_type_obj:",car_type_obj);
-    console.log("driver_detail:",driver_detail);
-    console.log("driver_photo_obj:",driver_photo_obj);
-    console.log("fare_for_ride_type_obj:",fare_for_ride_type_obj);
-
-    console.log("completed_ride_by_year_obj:",completed_ride_by_year_obj);
-    console.log("completed_ride_by_month_obj:",completed_ride_by_month_obj);
-    //console.log("total_time_minutes_by_ride_type:",total_time_minutes_by_ride_type);
-    console.log("fare_by_month_obj:",fare_by_month_obj);
-    console.log("fare_by_year_obj:",fare_by_year_obj);
-    console.log("distance_by_month_obj:",distance_by_month_obj);
-    console.log("distance_by_year_obj:",distance_by_year_obj);
     
     total_distance = parseFloat(Math.round(total_distance * 100) / 100).toFixed(2);
-
-    console.log("total_distance:",total_distance);
-    console.log("coupon_applied:",coupon_applied);
-    console.log("total_fare:",total_fare);
-    console.log("total_time:",total_time);
-
-
 
     show_all_stats(trip_type_obj,total_fare,pick_up_address_obj,drop_address_obj,driver_photo_obj,driver_detail,car_ride_type_obj,car_type_obj,total_distance,coupon_applied,total_time,completed_ride_by_year_obj,completed_ride_by_month_obj,most_expensive_trip_value);
 
@@ -544,7 +519,6 @@ function convert_date_string_to_date_month_year(timestamp) {
 }
 
 function startStatistics() {
-  console.log(global);
 
   findTotalRideByType();
   addTotalRidesStat();
@@ -1130,7 +1104,6 @@ function registerClickHandlers() {
     $(".should-hide-in-image").hide();
     let options = {backgroundColor: '#000'};
     html2canvas($('.container')[0], options).then(function (canvas) {
-      console.log(canvas);
       let a = document.createElement('a');
       // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
       a.href = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
